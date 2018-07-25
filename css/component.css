@@ -201,14 +201,20 @@ footer{float:right;}
 	 height:2.5rem;
    float:left;
 }
-
 .work-show{
-	text-align: center;
-	height:3rem;
-	line-height:3rem;
-	background-color:white;
-}
 
+}
+.work-show ul{
+      list-style:none;
+	}
+.work-show li{
+	      float:left;
+				padding-left: .6rem;
+		}
+.work-show img{
+			      width:6rem;
+						height:5rem;
+				}
 
 @import url(http://fonts.googleapis.com/css?family=Oswald:700);
 .debug {

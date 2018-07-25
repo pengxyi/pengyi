@@ -12,13 +12,10 @@
 		<link rel="shortcut icon" href="favicon.ico">
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,600|Merriweather:400' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/select-css.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<script type="text/javascript" src="js/greensock/minified/TweenMax.min.js"></script>
 		<script src="js/modernizr-custom.js"></script>
-		<script src="js/draggabilly.pkgd.min.js"></script>
-		<script src="js/elastiStack.js"></script>
 	</head>
 
 	<body>
@@ -101,15 +98,18 @@
 				</div>
 
 				<div class="page page1">
-								<ul >
-									<li><img src="img/1.jpg" alt="01"/></li>
-									<li><img src="img/2.png" alt="02"/></li>
-									<li><img src="img/3.jpg" alt="03"/></li>
-									<li><img src="img/4.jpg" alt="04"/></li>
-									<li><img src="img/5.png" alt="05"/></li>
-									<li><img src="img/6.png" alt="06"/></li>
-								</ul>
-			</div>
+            <div class="work-show">
+							<h1>图片展示</h1>
+            	<ul>
+            		<li><img src="img/1.jpg"></li>
+								<li><img src="img/2.png"></li>
+								<li><img src="img/3.jpg"></li>
+								<li><img src="img/4.jpg"></li>
+								<li><img src="img/5.png"></li>
+								<li><img src="img/6.png"></li>
+            	</ul>
+            </div>
+				</div>
 
 
 			<nav class="pagenav">
@@ -265,7 +265,7 @@
 			}
 			// changing the effect..
 			var effectCtrl = document.getElementById('select-effect');
-			effectCtrl.addEventListener('change', changeEffect);
+
 			// force it to be the first opt as default
 			effectCtrl.value = 'effect-3';
 			function changeEffect() {
