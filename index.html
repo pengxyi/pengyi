@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Page Reveal Effects | Codrops</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<title>彭毅的简历</title>
 		<meta name="description" content="Some inspiration for multi-layer page reveal effects" />
 		<meta name="keywords" content="overlay, reveal, effect, page transition, inspiration, javascript" />
 		<meta name="author" content="Codrops" />
@@ -15,7 +15,10 @@
 		<link rel="stylesheet" type="text/css" href="css/select-css.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script type="text/javascript" src="js/greensock/minified/TweenMax.min.js"></script>
 		<script src="js/modernizr-custom.js"></script>
+		<script src="js/draggabilly.pkgd.min.js"></script>
+		<script src="js/elastiStack.js"></script>
 	</head>
 
 	<body>
@@ -23,7 +26,6 @@
 		<svg class="hidden">
 			<defs>
 				<symbol id="icon-arrow" viewBox="0 0 39 51.43">
-					<title>Arrow Left</title>
 					<polygon points="7 25.71 36 45.71 36 26.08 36 5.71 7 25.71" stroke-miterlimit="10" stroke-width="6"/><line x1="3" y1="5.71" x2="3" y2="45.71" fill="none" stroke-miterlimit="10" stroke-width="6"/>
 				</symbol>
 			</defs>
@@ -33,8 +35,20 @@
 			<div class="pages">
 
 				<div class="page page--current"><!-- intro page -->
+					<!-- 盒子 -->
+					<div class="content">
+						 <div class="svg-container" id="boxContainer">
+							 <svg id="boxLoader" width="2rem" height="2rem" viewBox="0 0 35 35" preserveAspectRatio="none">
+								<rect x="0" fill="#fff" width="1.5rem" height="1.5rem" />
+							</svg>
+							<svg id="base" width="7rem" height="7rem" viewBox="0 0 105 105" preserveAspectRatio="none">
+								<line stroke-width="0" fill="none" stroke="#383845" stroke-miterlimit="10" x1="0" y1="52.5" x2="105" y2="52.5" />
+							 </svg>
+						</div>
+					</div>
+					<!-- 盒子 -->
 					<header class="codrops-header">
-						<h2><strong>信息</strong></h2>
+          <h1><strong>信息</strong></h1>
 					</header>
 						<div class="pater__text">
 							<p> 姓名:彭毅</p>
@@ -42,6 +56,7 @@
 							<p> 专业：计算机应用技术</p>
 							<p> 爱好:大乒乓球, 看电影, 听歌, 玩游戏, 跑步</p>
 					</div>
+
 				</div>
 
 				<div class="page page--animate-right page--current">
@@ -86,16 +101,14 @@
 				</div>
 
 				<div class="page page1">
-					<span class="work-show"><strong>Work-show</strong></span>
-					<blockquote class="quote">
-					<ul>
-					 <img src="img/A7.jpg"><li> html </li>
-					 <img src="img/A6.png"><li> css </li>
-					 <img src="img/A5.png"><li> js </li>
-					</ul>
-					</blockquote>
-				</div>
-
+								<ul >
+									<li><img src="img/1.jpg" alt="01"/></li>
+									<li><img src="img/2.png" alt="02"/></li>
+									<li><img src="img/3.jpg" alt="03"/></li>
+									<li><img src="img/4.jpg" alt="04"/></li>
+									<li><img src="img/5.png" alt="05"/></li>
+									<li><img src="img/6.png" alt="06"/></li>
+								</ul>
 			</div>
 
 
@@ -108,6 +121,101 @@
 		<script src="js/classie.js"></script>
 		<script src="js/main.js"></script>
 		<script>
+
+		(function() {
+			var boxContainer = document.getElementById('boxContainer');
+			var boxLoader = document.getElementById('boxLoader');
+			var box = document.getElementById('box');
+			var base = document.getElementById('base');
+
+			TweenMax.set([boxLoader, base], {
+				position: 'absolute',
+				top: '50%',
+				left: '50%',
+				xPercent: -50,
+				yPercent: -50
+			})
+
+			TweenMax.set([boxContainer], {
+				position: 'absolute',
+				top:'25%',
+				left: '50%',
+				xPercent: -25,
+				yPercent: -50
+			})
+
+			var tl = new TimelineMax({
+				repeat: -1
+			});
+
+			tl.timeScale(1.2)
+
+			tl.set(boxLoader, {
+				transformOrigin: '0% 100%',
+				left: '+=70',
+				top: '-=' + 70 / 2
+			})
+			.to(boxLoader, 1, {
+				rotation: '-=90',
+				ease: Power4.easeInOut
+			})
+			.set(boxLoader, {
+				transformOrigin: '0% 100%',
+				left: '-=70',
+				rotation: 0
+			})
+			.to(boxLoader, 1, {
+				rotation: '-=90',
+				ease: Power4.easeInOut
+			})
+			.set(boxLoader, {
+				transformOrigin: '0% 100%',
+				left: '-=70',
+				rotation: 0
+			})
+			.to(boxLoader, 1, {
+				rotation: '-=270',
+				ease: Power4.easeInOut
+			})
+			.to(boxContainer, 1, {
+				rotation: '+=180',
+				ease: Back.easeInOut
+			}, '-=1')
+			.set(boxLoader, {
+				transformOrigin: '100% 0%',
+				top: '+=70',
+				rotation: 0
+			})
+			.to(boxLoader, 1, {
+				rotation: '-=90',
+				ease: Power4.easeInOut
+			})
+			.set(boxLoader, {
+				transformOrigin: '100% 0%',
+				left: '+=70',
+				rotation: 0
+			})
+			.to(boxLoader, 1, {
+				rotation: '-=90',
+				ease: Power4.easeInOut
+			})
+			.set(boxLoader, {
+				transformOrigin: '100% 0%',
+				left: '+=70',
+				rotation: 0
+			})
+			.to(boxLoader, 1, {
+				rotation: '-=270',
+				ease: Power4.easeInOut
+			})
+			.to(boxContainer, 1, {
+				rotation: '+=180',
+				ease: Back.easeInOut
+			}, '-=1')
+		})();
+
+
+
 		(function() {
 			var pages = [].slice.call(document.querySelectorAll('.pages > .page')),
 				currentPage = 0,
@@ -183,6 +291,80 @@
 				revealer = new Revealer(revealerOpts);
 			}
 		})();
+
+
+      // 跳动
+			(function() {
+			var container = document.getElementById('container');
+			var loader = document.getElementById('loader');
+			var circleL = document.getElementById('circleL');
+			var circleR = document.getElementById('circleR');
+			var jump = document.getElementById('jump');
+			var jumpRef = jump.cloneNode();
+
+			loader.appendChild(jumpRef);
+
+			TweenMax.set([container, loader], {
+			 position: 'absolute',
+			 top:'50%',
+			 left: '50%',
+			 xPercent: -50,
+			 yPercent: -50
+			})
+
+			TweenMax.set(jumpRef, {
+			 transformOrigin: '50% 110%',
+			 scaleY: -1,
+			 alpha: 0.05
+			})
+
+			var tl = new TimelineMax({
+			 repeat: -1,
+			 yoyo: false
+			});
+
+			tl.timeScale(3);
+
+			tl.set([jump, jumpRef], {
+			 drawSVG: '0% 0%'
+			})
+			.set([circleL, circleR], {
+			 attr: {
+				 rx: 0,
+				 ry: 0,
+			 }
+			})
+			.to([jump, jumpRef], 0.4, {
+			 drawSVG: '0% 30%',
+			 ease: Linear.easeNone
+			})
+			.to(circleL, 2, {
+			 attr: {
+				 rx: '+=30',
+				 ry: '+=10'
+			 },
+			 alpha: 0,
+			 ease: Power1.easeOut
+			}, '-=0.1')
+			.to([jump, jumpRef], 1, {
+			 drawSVG: '50% 80%',
+			 ease: Linear.easeNone
+			}, '-=1.9')
+			.to([jump, jumpRef], 0.7, {
+			 drawSVG: '100% 100%',
+			 ease: Linear.easeNone
+			}, '-=0.9')
+			.to(circleR, 2, {
+			 attr: {
+				 rx: '+=30',
+				 ry: '+=10'
+			 },
+			 alpha: 0,
+			 ease: Power1.easeOut
+			}, '-=.5')
+			})();
+		// 跳动
+
 		</script>
 	</body>
 </html>

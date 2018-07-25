@@ -14,7 +14,7 @@ body {
 	margin:0 auto;
 }
 
-h2{
+h1{
      text-align: center;
 }
 
@@ -22,6 +22,11 @@ h2{
 	padding: .5rem;
 	border:.1rem solid white;
 	margin-top:3rem;
+}
+.content{
+    padding-top:5rem;
+		margin:0 auto;
+
 }
 
 .js .pages {
@@ -31,6 +36,8 @@ h2{
 	height: 100vh;
 	z-index: 0;
 }
+
+.content{float:left;}
 
 .page {
 	padding: 6.5em;
@@ -173,6 +180,7 @@ h2{
 
 .celebirty{
      margin:0 auto;
+		 font-size:1.3rem;
 		 padding-top:10rem;
 		 padding-left: 1rem;
 }

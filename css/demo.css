@@ -41,6 +41,9 @@ a:focus {
 	pointer-events: none;
 }
 
+.content{
+	float:left;
+}
 
 /* Header */
 
