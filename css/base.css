@@ -1,0 +1,11 @@
+
+a {
+	color: #067ba7;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: #fff;
+}
