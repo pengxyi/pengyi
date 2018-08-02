@@ -15,6 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="css/default.css"/>
 		<script src="js/snap.svg-min.js"></script>
 		<script src="js/modernizr-custom.js"></script>
+
 	</head>
 	<body>
 		<!-- 导航按钮 -->
@@ -157,8 +158,27 @@ C301,229.646,301,301,301,301z" />
 					</div><!-- /container -->
 				</div>
 
-			</div><!-- /pages -->
+			<!-- div5 -->
+			<div class="page page3">
+				<section class="tips"></section>
+				<div class="produter"><a class="main" href="#url">点击我</a>
+				 <div class="sub first">
+					 <img src="img/html0.png" alt=""><p><span>网页</span>专注于HTML5、CSS3、js、jQuery、手机移动端等网页特效。</p>
+						 <div class="sub even"><img src="img/html1.png" alt=""><p><span>jQuery导航菜单</span>导航栏是指位于页眉区域的</p>
+							 <div class="sub odd"><img src="img/html2.png" alt=""><p><span>瀑布流</span>瀑布流，又称瀑布流式布局。</p>
+								 <div class="sub even"><img src="img/html3.png" alt=""><p><span>响应式</span>响应式布局是Ethan Marcotte在2010年5月份提出的一个概念。</p>
+									 <div class="sub odd last"><img src="img/html4.png" alt=""><p><span>视差滚动</span>视差滚动（Parallax Scrolling）。</p>
+										 <div class="sub odd last"><img src="img/html4.png" alt=""><p><span>视差滚动</span>视差滚动（Parallax Scrolling）。</p>
+									   </div>
+								 </div>
+							 </div>
+						 </div>
+				 </div>
+				</div>
+			</div>
+		</div>
 
+   </div><!-- /pages -->
 
 			<nav class="pagenav">
 				<button class="pagenav__button pagenav__button--bottom" aria-label="Navigate bottom"><img src="img/home.png" width="20rem" height="20rem" alt=""></button>
@@ -177,7 +197,7 @@ C301,229.646,301,301,301,301z" />
 				currentPage = 0,
 
 				revealerOpts = {
-					nmbLayers : 3,
+					nmbLayers : 4,
 					bgcolor : ['#0092DD', '#fff', '#3E3A35'],
 					effect : 'anim--effect-3',
 					onStart : function(direction) {
@@ -210,11 +230,11 @@ C301,229.646,301,301,301,301z" />
                         }else if(direction == "bottom"){
                             currentPage = 0;
                         }
-                        if(currentPage>3){
+                        if(currentPage>4){
                             currentPage = 0;
                         }
                         if(currentPage<0){
-                            currentPage = 3;
+                            currentPage = 4;
                         }
 						classie.add(pages[currentPage], 'page--current');
 					};
@@ -230,19 +250,18 @@ C301,229.646,301,301,301,301z" />
 			function changeEffect() {
 				revealer.destroy();
 				var revealerOpts = {
-					// the layers are the elements that move from the sides
+
 					nmbLayers : Number(this.options[this.selectedIndex].getAttribute('data-layers')),
-					// bg color of each layer
+
 					bgcolor : this.options[this.selectedIndex].getAttribute('data-colors').split(','),
-					// effect classname
+
 					effect : 'anim--' + this.value,
 					onStart : function(direction) {
-						// next page gets class page--animate-[direction]
+
 						var nextPage = pages[currentPage === 0 ? 1 : 0];
 						classie.add(nextPage, 'page--animate-' + direction);
 					},
 					onEnd : function(direction) {
-						// remove class page--animate-[direction] from next page
 						var nextPage = pages[currentPage === 0 ? 1 : 0];
 						nextPage.className = 'page';
 					}

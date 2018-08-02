@@ -519,3 +519,44 @@ ul.stack__images {
 		padding: 0.5em;
 	}
 }
+
+
+/* div5 */
+.produter {width:250px; height:35px; margin:0 auto; position:relative; z-index:100;
+	-webkit-perspective:400px;
+	-moz-perspective:400px;
+	perspective:400px;
+	-webkit-perspective-origin: 50% 100%;
+	-moz-perspective-origin: 50% 100%;
+	perspective-origin: 50% 100%;
+}
+/* produter下所有div的统一设置 */
+.produter div {position:absolute; padding:10px;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	transform-style:preserve-3d;
+	top:100%; left:0; width:250px;
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+.produter .odd {background:#ddd;}
+.produter .even {background:#eee;}
+.produter .first {background:#ddd;
+	-moz-transform:rotateX(-100deg);
+	-webkit-transform:rotateX(-100deg);
+	transition: 0.5s;
+}
+.produter .last {box-shadow:0 15px 10px -10px rgba(0,0,0,0.3); border-radius: 0 0 10px 10px;}
+.produter:hover .sub {
+	-moz-transform:rotateX(0deg);
+	-webkit-transform:rotateX(0deg);
+}
+
+.produter .sub img {display:block; float:left; padding:0 10px 10px 0; width: 48px; height: 48px;}
+.produter .sub p {font: normal 12px/15px arial, sans-serif; color:#000; padding:0; margin:0;}
+.produter .sub p span {display:block; font: bold 14px/18px arial, sans-serif; color:#069;}
+.produter .sub p a {font: normal 12px/15px arial, sans-serif; color:#09c;}
+.produter .sub p a:hover {text-decoration:none;}
+.produter a.main {display:block; font: bold 15px/35px arial, sans-serif; text-align:center; text-decoration:none; color:#fff; background:#069; border-radius:10px 10px 0 0; position:relative; z-index:100;}
