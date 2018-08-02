@@ -32,7 +32,7 @@
 		<main class="container">
 			<div class="pages">
 
-				<!--1-->
+				<!--div1-->
 				<div class="page page--current">
 					<header class="codrops-header">
 
@@ -66,17 +66,17 @@
 						<div id="ballShadow"></div>
 					</div>
 
-				</div><!-- /page -->
-
-				<!--2-->
+				</div>
+        <!--div1-->
+				<!--div2-->
 				<div class="page">
 					<blockquote class="quote">
 						<p>一个好的程序员是在横过一条单行道之前总是看两边的人。</p>
 						<footer>---彭毅</footer>
 					</blockquote>
 				</div>
-
-               <!--3-->
+        <!--div2-->
+               <!--div3-->
 				<div class="page page1">
 						<div id="content">
 								<h1>能力:</h1>
@@ -92,7 +92,7 @@
 						</div>
 
 				</div>
-				      <!--3-->
+				      <!--div3-->
          <!--div4-->
 				<div class="page page2"  class="demo-1">
 					<div id="morph-shape" class="morph-shape" data-morph-next="M301,301c0,0-83.8-21-151-21C71.8,280-1,301-1,301s21-65.7,21-151C20,79.936-1-1-1-1s73,11,151,11c85,0,151-11,151-11
@@ -214,8 +214,6 @@ C301,229.646,301,301,301,301z" />
 			document.querySelector('button.pagenav__button--bottom').addEventListener('click', function() { reveal('bottom'); });
 			document.querySelector('button.pagenav__button--cornerbottomleft').addEventListener('click', function() { reveal('cornerbottomleft'); });
 			document.querySelector('button.pagenav__button--cornerbottomright').addEventListener('click', function() { reveal('cornerbottomright'); });
-
-			// triggers the effect by calling instance.reveal(direction, callbackTime, callbackFn)
             function reveal(direction) {
                 var callbackTime = 750,
                     callbackFn = function() {
