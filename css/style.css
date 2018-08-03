@@ -75,15 +75,11 @@ span:nth-child(7) {
 
 
 #ballWrapper {
-	width: 60px;
-	height: 150px;
-	position: fixed;
-	left: 78%;
-	top: 23%;
-	margin-left: -70px;
-	z-index: 100;
-	transition: all 5s linear 0s;
-	cursor: pointer;
+  width: 60px;
+  height: 150px;
+  position: fixed;
+  left: 63%;
+  top: 26%;
 }
 
 #ballWrapper:active {
