@@ -244,7 +244,7 @@ width:300px;
 		-webkit-box-flex: 0;
 		-ms-flex: none;
 		flex: none;
-		margin: 0;
+		margin: 0 auto;
 		padding: 0;
 		min-height: 0;
 	}
@@ -256,7 +256,6 @@ width:300px;
 	}
 
 	.pater {
-		margin: 0;
 		max-width: none;
 		font-size: 0.85em;
 		padding: 2.5em 1em 1em;
@@ -269,7 +268,7 @@ width:300px;
 		width: 160px;
 	}
 	.container .page {
-		padding: 2.85em;
+		padding: 2.6em;
 	}
 	.container .pagenav {
 		top: 0.5em;
