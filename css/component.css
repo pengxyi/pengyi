@@ -44,6 +44,10 @@
 	bottom: 2em;
 	z-index: 1000;
 }
+.pagenav img{
+	border-radius:100%;
+  overflow:hidden;
+}
 
 .pagenav__button {
 	position: absolute;
@@ -172,6 +176,10 @@ ul.stack__images {
 	font-size: 30px;
 	position: relative;
 	color: #067ba7;
+}
+.stack__next  img{
+	border-radius:50%;
+  overflow:hidden;
 }
 
 .stack__next:focus {
