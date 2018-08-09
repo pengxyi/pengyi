@@ -261,11 +261,11 @@ width:300px;
 	.pater::after {
 		top: 1em;
 	}
-	.pater__img {
+	/* .pater__img {
 		width: 160px;
-	}
+	} */
 	.container .page {
-		padding: 2em;
+		padding: 1.5em;
 	}
 	.container .pagenav {
 		top: 0.5em;
