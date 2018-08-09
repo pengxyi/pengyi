@@ -258,7 +258,7 @@ width:300px;
 	.pater {
 		max-width: none;
 		font-size: 0.85em;
-		padding: 2.5em 1em 1em;
+		padding: 2.2em 1em 1em;
 	}
 	.pater::after {
 		top: 1em;
@@ -268,7 +268,7 @@ width:300px;
 		width: 160px;
 	}
 	.container .page {
-		padding: 2.6em;
+		padding: 2em;
 	}
 	.container .pagenav {
 		top: 0.5em;
